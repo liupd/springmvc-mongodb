@@ -34,4 +34,9 @@ public class OpenSurveyServiceImpl implements OpenSurveyService {
         return baseRepository.findAll(OpenSurvey.class);
     }
 
+    @Override
+    public void addOpenSurver(OpenSurvey survey) {
+        baseRepository.insert(survey);
+    }
+
 }

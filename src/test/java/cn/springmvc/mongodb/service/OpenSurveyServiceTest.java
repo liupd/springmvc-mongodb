@@ -1,5 +1,6 @@
 package cn.springmvc.mongodb.service;
 
+import java.util.Calendar;
 import java.util.List;
 
 import org.apache.commons.collections4.CollectionUtils;
@@ -40,6 +41,35 @@ public class OpenSurveyServiceTest {
                     log.warn("## {}", FormatFactory.objectToJson(s));
                 }
             }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void addOpenSurver() {
+        try {
+            OpenSurvey s = new OpenSurvey();
+            // s.setId("00c3d1a9-ea7d-41cd-a07f-f5768de4");
+            s.setId("00da34a2-5057-4c5b-b273-e5ee9256");
+            s.setAllowreport(0);
+            s.setPagecount(1);
+            s.setQuestioncount(1);
+            s.setSamplecount(1);
+            s.setSamplesum(1);
+            s.setShow(1);
+            s.setSurveyurl("www.baidu.com");
+            s.setTag("问卷");
+            s.setType(1);
+            s.setTypename("问卷");
+            s.setUid("sss");
+            s.setUsersurveycount(1);
+            s.setViewersum(1);
+            s.setCreatetime(Calendar.getInstance().getTime());
+            s.setName("这是我的问卷，希望得到您的回复！");
+            s.setDescription("婚礼活动策划yesno");
+            openSurveyService.addOpenSurver(s);
+            System.out.print("# 新增数据成功！");
         } catch (Exception e) {
             e.printStackTrace();
         }

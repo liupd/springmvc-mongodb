@@ -26,4 +26,12 @@ public interface OpenSurveyService {
      */
     public List<OpenSurvey> findOpenSurveyAll();
 
+    /**
+     * 新增一条公开问卷数据
+     * 
+     * @param survey
+     *            问卷对象
+     */
+    public void addOpenSurver(OpenSurvey survey);
+
 }
